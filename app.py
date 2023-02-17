@@ -24,7 +24,7 @@ list_stopwords = df_stopwords["stopwordbahasa"].tolist()
 # Fuction Cleaning text
 def cleansingData(data):
     data = remove_emoji (data)
-    data = lowercase (data)
+    data = lower_case (data)
     data = stemming (data)
     data = tokenization (data)
     data = normalization (data)
@@ -50,7 +50,7 @@ def remove_emoji (data):
     return emoji_pattern.sub(r'', data)
         
 # case folding
-def lowercase (data):
+def lower_case (data):
     data = data.lower()
     return data
 
@@ -93,7 +93,7 @@ def remove_punctuation (data):
 
 # Stopwords
 def stopwords (data) :
-    for i in reversed (data) :
+    for i in data : 
         if i in list_stopwords :
             data.remove(i)
     return data
