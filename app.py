@@ -27,7 +27,7 @@ def cleansingData(data):
     data = lower_case (data)
     data = stemming (data)
     data = tokenization (data)
-    data = normalization (data)
+    data = kamusAlay (data)
     data = remove_number (data)
     data = remove_punctuation (data)
     data = stopwords (data)
@@ -66,8 +66,8 @@ def tokenization (data) :
     data = data.split()
     return data
 
-# Normalization (Kamus Alay)
-def normalization (data) :
+# Kamus Alay
+def kamusAlay (data) :
     for i in data :
         for key, value in dict_kamusalay.items():
             if key not in data:
